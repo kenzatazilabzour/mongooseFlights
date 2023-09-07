@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>All Flights</h1>
+    <ul>
+      <% flights.forEach(function (flight) { %>
+        <li class="<%= flight.departs < new Date() ? 'red-text' : '' %>">
+          Airline: <%= flight.airline %><br>
+            Airport: <%= flight.airport %><br>
+              Flight No.: <%= flight.flightNo %><br>
+                Departure Date/Time: <%= flight.departs.toISOString().slice(0, 19).replace('T', ' ' ) %>
+        </li>
+        <% }); %>
+    </ul>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>

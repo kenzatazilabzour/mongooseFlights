@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+  <main>
+    <h2>Flights</h2>
+    <ul class="flight-list">
+      <% flights.forEach((flight)=> { %>
+        <li class="<%= flight.departureDate < new Date() ? 'expired-flight' : '' %>">
+          <strong>
+            <%= flight.airline %>
+          </strong>
+          Departure: <%= flight.departureDate.toDateString() %>
+        </li>
+        <% }); %>
+    </ul>
+  </main>
+
+  <%- include('partials/footer') %>
