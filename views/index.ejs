@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('./partials/header') %>
 
   <main>
     <h2>Flights</h2>
@@ -11,7 +11,9 @@
           Departure: <%= flight.departureDate.toDateString() %>
         </li>
         <% }); %>
+
     </ul>
   </main>
+</body>
 
-  <%- include('partials/footer') %>
+</html>

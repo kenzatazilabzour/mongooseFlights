@@ -6,6 +6,7 @@
   </head>
   <body>
     <h1>All Flights</h1>
+    <a href = '/flights/new'>Add A Flight</a>
     <ul>
       <% flights.forEach(function (flight) { %>
         <li class="<%= flight.departs < new Date() ? 'red-text' : '' %>">

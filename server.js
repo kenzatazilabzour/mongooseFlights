@@ -14,20 +14,6 @@ var flightsRouter = require('./routes/flights');
 
 var app = express();
 
-const mongoose = require('mongoose');
-
-
-
-app.use('/flights', flightsRouter);
-
-// ... (other middleware and configurations)
-
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
-});
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -40,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,4 +1,4 @@
-const Flight = require('../models/flights');
+const Flights = require('../models/flights');
 // Controller function for listing all flights
 module.exports = {
   listFlights,
@@ -17,7 +17,7 @@ async function listFlights  (req, res) {
       }
     ))
     console.log(updatedFlights);
-    res.render('index', { flights: updatedFlights });
+    res.render('flights/index', { flights: updatedFlights, title:'All Flights'});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Error' });
@@ -26,7 +26,7 @@ async function listFlights  (req, res) {
 // Controller function
 async function showAddFlightForm (req, res)  {
   // Render 'new' view
-  res.render('new');
+  res.render('flights/new',{departsDate:'string'});
 };
 // Controller function for new flight
 async function addFlight (req, res)  {

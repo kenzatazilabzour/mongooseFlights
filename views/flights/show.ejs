@@ -1,0 +1,8 @@
+<li>
+  Seat: <%= ticket.seat %>
+    Price: $<%= ticket.price %>
+      <form action="/tickets/<%= ticket._id %>" method="POST" class="delete-form">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+</li>

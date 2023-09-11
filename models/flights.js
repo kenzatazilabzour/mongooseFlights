@@ -25,6 +25,20 @@ const flightSchema = new mongoose.Schema({
       return oneYearFromNow;
     },
   },
+  destination: [destinationSchema],
 });
 
-module.exports = mongoose.model('Flights', flightSchema);
+const destinationSchema = new mongoose.Schema({
+  airport: {
+    type: String,
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+    required: true,
+  },
+  arival: {
+    type: Date,
+    required: true,
+  },
+});
+
+module.exports = Flight;
+module.exports = mongoose.model('Flight', flightSchema);
